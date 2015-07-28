@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SqlScript xmlns="http://www.alteiar.net/sql">
+	<name>create db1</name>
+	<description>Here a description about the query</description>
+	<query>INSERT INTO test VALUES (1, 'cody', 'dev')</query>
+</SqlScript>

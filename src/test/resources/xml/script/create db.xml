@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SqlScript xmlns="http://www.alteiar.net/sql">
+	<name>create db</name>
+	<description>Here a description about the query</description>
+	<query>CREATE TABLE test (id int(10), name varchar(120), description varchar(250))</query>
+</SqlScript>

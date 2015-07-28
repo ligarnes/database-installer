@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SqlModule xmlns="http://www.alteiar.net/sql">
+	<name>test</name>
+	<description>Here a long description about the module</description>
+	<script>create db</script>
+	<script>create db1</script>
+	<script>create db2</script>
+	<script>create db3</script>
+	<script>create db4
+</SqlModule>
