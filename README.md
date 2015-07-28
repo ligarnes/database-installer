@@ -2,9 +2,12 @@
 
 This project provide a simple framework to make database installer with pure sql script.
 
-[![Build Status](https://travis-ci.org/ligarnes/virtual-tabletop.svg?branch=master)](https://travis-ci.org/ligarnes/virtual-tabletop)
+This framework allow multi-module installation and upgrade easily.
 
-This framework allow multi-module installation and upgrade
+
+## Builds
+Master [![Build Status](https://travis-ci.org/ligarnes/database-installer.svg)](https://travis-ci.org/ligarnes/database-installer)
+Develop [![Build Status](https://travis-ci.org/ligarnes/database-installer.svg?branch=develop)](https://travis-ci.org/ligarnes/database-installer)
 
 # Documentation
 
