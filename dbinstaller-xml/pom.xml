@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>net.alteiar</groupId>
+    <artifactId>db-installer-root</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.alteiar</groupId>
+  <artifactId>dbinstaller-xml</artifactId>
+  <name>Database Installer: xml</name>
+  <version>${parent.version}</version>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>${jaxb.plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+
+            <configuration>
+              <schemaDirectory>src/main/resources</schemaDirectory>
+              <bindingDirectory>src/main/resources</bindingDirectory>
+              <extension>true</extension>
+              <locale>en</locale>
+              <strict>false</strict>
+
+              <plugins>
+                <dependency>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-basics</artifactId>
+                  <version>${jaxb.basic.version}</version>
+                </dependency>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-basics-annotate</artifactId>
+                  <version>${jaxb.baic.annotate.version}</version>
+                </plugin>
+              </plugins>
+            </configuration>
+
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- PITest -->
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.1.6</version>
+        <configuration>
+          <targetClasses>
+            <param>net.alteiar.db.installer.*</param>
+          </targetClasses>
+          <targetTests>
+            <param>net.alteiar.db.installer.*</param>
+          </targetTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!--  -->
+    <dependency>
+      <groupId>net.alteiar</groupId>
+      <artifactId>dbinstaller-api</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.alteiar</groupId>
+      <artifactId>dbinstaller-core</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
+
+    <!-- Logging -->
+<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-api</artifactId>
+	    <version>2.5</version>
+	  </dependency>
+	  <dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>2.5</version>
+	  </dependency>
+	  
+    <!-- Tests -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${h2.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
