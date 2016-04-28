@@ -1,5 +1,7 @@
 package net.alteiar.db.installer.xml.location.resolver;
 
+import java.io.File;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -26,8 +28,9 @@ public class FileResolverTest {
 
     FileResolver resolver = new FileResolver();
 
+    String folder = "./src/test/resources/xml/not/found";
     FileLocationType locationType = new FileLocationType();
-    locationType.setFolder("./src/test/resources/xml/not/found");
+    locationType.setFolder(folder);
 
     try {
 
@@ -35,8 +38,8 @@ public class FileResolverTest {
       Assert.fail("A DbScriptException is expected");
     } catch (DbScriptException ex) {
 
-      Assert.assertEquals("The sql script .\\src\\test\\resources\\xml\\not\\found\\any.xml is not found",
-                          ex.getMessage());
+      File file = new File(folder, "any.xml");
+      Assert.assertEquals("The sql script " + file.getPath() + " is not found", ex.getMessage());
     }
   }
 
@@ -45,8 +48,10 @@ public class FileResolverTest {
 
     FileResolver resolver = new FileResolver();
 
+    String folder = "./src/test/resources/xml/invalid";
+
     FileLocationType locationType = new FileLocationType();
-    locationType.setFolder("./src/test/resources/xml/invalid");
+    locationType.setFolder(folder);
 
     try {
 
@@ -54,8 +59,9 @@ public class FileResolverTest {
       Assert.fail("A DbScriptException is expected");
     } catch (DbScriptException ex) {
 
-      Assert.assertEquals("Failed to parse the sql script .\\src\\test\\resources\\xml\\invalid\\script_invalid.xml",
-                          ex.getMessage());
+      File file = new File(folder, "script_invalid.xml");
+
+      Assert.assertEquals("Failed to parse the sql script " + file.getPath(), ex.getMessage());
     }
   }
 
