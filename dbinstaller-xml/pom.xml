@@ -12,7 +12,7 @@
   <groupId>net.alteiar</groupId>
   <artifactId>dbinstaller-xml</artifactId>
   <name>Database Installer: xml</name>
-  <version>${parent.version}</version>
+  <version>1.0.0-SNAPSHOT</version>
 
   <build>
     <plugins>
@@ -81,12 +81,12 @@
     <dependency>
       <groupId>net.alteiar</groupId>
       <artifactId>dbinstaller-api</artifactId>
-      <version>${parent.version}</version>
+      <version>${project.parent.version}</version>
     </dependency>
     <dependency>
       <groupId>net.alteiar</groupId>
       <artifactId>dbinstaller-core</artifactId>
-      <version>${parent.version}</version>
+      <version>${project.parent.version}</version>
     </dependency>
 
     <!-- Logging -->
