@@ -1,4 +1,4 @@
-package net.alteiar.db.installer.exception;
+package net.alteiar.db.installer.xml.exception;
 
 public class ParsingException extends Exception {
 
