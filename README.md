@@ -6,9 +6,9 @@ This framework allow multi-module installation and upgrade of database using JDB
 
 
 ## Builds
-Master [![Build Status](https://travis-ci.org/ligarnes/database-installer.svg)](https://travis-ci.org/ligarnes/database-installer)
+Master [![Build Status](https://travis-ci.org/ligarnes/database-installer.svg?branch=master)](https://travis-ci.org/ligarnes/database-installer) <br/>
 Develop [![Build Status](https://travis-ci.org/ligarnes/database-installer.svg?branch=develop)](https://travis-ci.org/ligarnes/database-installer)
-[![Coverage Status](https://coveralls.io/repos/github/ligarnes/database-installer/badge.svg?branch=feature%2Frefactor)](https://coveralls.io/github/ligarnes/database-installer?branch=feature%2Frefactor)
+Coverage [![Coverage Status](https://coveralls.io/repos/github/ligarnes/database-installer/badge.svg?branch=develop)](https://coveralls.io/github/ligarnes/database-installer?branch=feature%2Frefactor)
 
 # Documentation
 

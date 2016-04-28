@@ -23,7 +23,8 @@ public class UnitTestContext {
     }
 
     JdbcDataSource jdbcDatasource = new JdbcDataSource();
-    jdbcDatasource.setURL("jdbc:h2:./test");
+    // jdbcDatasource.setURL("jdbc:h2:./test");
+    jdbcDatasource.setURL("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
     jdbcDatasource.setUser("sa");
     jdbcDatasource.setPassword("sa");
 
