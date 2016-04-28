@@ -1,7 +1,9 @@
-package net.alteiar.db.installer.exception;
+package net.alteiar.db.installer.xml.exception;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import net.alteiar.db.installer.xml.exception.ParsingException;
 
 public class ParsingExceptionTest {
 

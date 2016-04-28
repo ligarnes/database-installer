@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
 
   <properties>
-  
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- Logging -->
@@ -19,10 +19,10 @@
 
     <!-- Spring -->
     <spring.version>4.1.7.RELEASE</spring.version>
-    
+
     <!-- Database -->
     <h2.version>1.4.187</h2.version>
-    
+
     <!-- JAXB -->
     <jaxb.plugin.version>0.12.3</jaxb.plugin.version>
     <jaxb.basic.version>0.9.4</jaxb.basic.version>
@@ -32,7 +32,7 @@
     <junit.version>4.12</junit.version>
     <jacoco.version>0.7.4.201502262128</jacoco.version>
     <pitest.version>1.1.6</pitest.version>
-    
+
     <!-- Sonar -->
     <sonar.host.url>http://localhost:9000</sonar.host.url>
     <sonar.jdbc.url>jdbc:h2:tcp://localhost:9092/sonar</sonar.jdbc.url>
@@ -73,6 +73,15 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.eluder.coveralls</groupId>
+        <artifactId>coveralls-maven-plugin</artifactId>
+        <version>4.1.0</version>
+        <configuration>
+          <repoToken>h3ikeDfOcF0cwZQCiiMmTRTgLzIaBaAn5</repoToken>
+        </configuration>
       </plugin>
     </plugins>
 

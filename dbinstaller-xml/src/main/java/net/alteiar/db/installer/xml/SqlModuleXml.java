@@ -1,15 +1,14 @@
 package net.alteiar.db.installer.xml;
 
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 import org.apache.logging.log4j.LogManager;
 
-import net.alteiar.db.installer.exception.ParsingException;
+import net.alteiar.db.installer.xml.exception.ParsingException;
 import net.alteiar.sql.ObjectFactory;
 import net.alteiar.sql.SqlModuleType;
 
-public class SqlModuleXml {
+class SqlModuleXml {
 
   private final SqlModuleType module;
 
@@ -31,18 +30,17 @@ public class SqlModuleXml {
   @Override
   public String toString() {
 
-    ByteArrayOutputStream out = new ByteArrayOutputStream();
-
+    String xmlModule = null;
     ObjectFactory factory = new ObjectFactory();
 
     try {
 
-      JAXBParser.getInstance().marshall(out, factory.createSqlModule(module));
+      xmlModule = JAXBParser.getInstance().marshall(factory.createSqlModule(module));
     } catch (ParsingException e) {
 
       LogManager.getLogger(getClass()).error("Failed to marshall the SqlModule", e);
     }
 
-    return new String(out.toByteArray());
+    return xmlModule;
   }
 }

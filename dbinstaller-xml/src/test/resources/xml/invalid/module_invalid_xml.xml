@@ -8,4 +8,5 @@
 	<script>create db1</script>
 	<script>create db2</script>
 	<script>create db3</script>
+	<script>create db4
 </SqlModule>

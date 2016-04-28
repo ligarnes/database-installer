@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import net.alteiar.db.installer.exception.ParsingException;
+import net.alteiar.db.installer.xml.exception.ParsingException;
 import net.alteiar.sql.SqlScriptType;
 
 public class SqlScriptWrapperTest {

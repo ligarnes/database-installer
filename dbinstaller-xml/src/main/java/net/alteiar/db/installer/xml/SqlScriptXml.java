@@ -1,11 +1,10 @@
 package net.alteiar.db.installer.xml;
 
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 import org.apache.logging.log4j.LogManager;
 
-import net.alteiar.db.installer.exception.ParsingException;
+import net.alteiar.db.installer.xml.exception.ParsingException;
 import net.alteiar.sql.ObjectFactory;
 import net.alteiar.sql.SqlScriptType;
 
@@ -44,19 +43,18 @@ public class SqlScriptXml implements net.alteiar.db.installer.SqlScript {
   @Override
   public String toString() {
 
-    ByteArrayOutputStream out = new ByteArrayOutputStream();
-
+    String xml = null;
     ObjectFactory factory = new ObjectFactory();
 
     try {
 
-      JAXBParser.getInstance().marshall(out, factory.createSqlScript(sqlScript));
+      xml = JAXBParser.getInstance().marshall(factory.createSqlScript(sqlScript));
     } catch (ParsingException e) {
 
-      LogManager.getLogger(getClass()).error("Fail to marshall the sqlScript", e);
+      LogManager.getLogger(getClass()).error("Failed to marshall the sqlScript", e);
     }
 
-    return new String(out.toByteArray());
+    return xml;
   }
 
 }

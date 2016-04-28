@@ -1,5 +1,6 @@
 package net.alteiar.db.installer.xml;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -11,7 +12,7 @@ import javax.xml.bind.Unmarshaller;
 
 import org.apache.logging.log4j.LogManager;
 
-import net.alteiar.db.installer.exception.ParsingException;
+import net.alteiar.db.installer.xml.exception.ParsingException;
 
 class JAXBParser {
 
@@ -43,27 +44,34 @@ class JAXBParser {
     try {
 
       Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-
       JAXBElement<E> jElement = (JAXBElement<E>) unmarshaller.unmarshal(inputStream);
-
       value = jElement.getValue();
 
     } catch (JAXBException e) {
-      throw new ParsingException("Fail to unmarshall the input", e);
+
+      throw new ParsingException("Failed to unmarshall the input", e);
     }
 
     return value;
   }
 
+  public <E> String marshall(JAXBElement<E> element) throws ParsingException {
+
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    marshall(out, element);
+
+    return new String(out.toByteArray());
+  }
+
   public <E> void marshall(OutputStream out, JAXBElement<E> element) throws ParsingException {
 
     try {
+
       Marshaller marshaller = jaxbContext.createMarshaller();
-
       marshaller.marshal(element, out);
-
     } catch (JAXBException e) {
-      throw new ParsingException(String.format("Fail to marshall the element %s", element.getValue()), e);
+
+      throw new ParsingException(String.format("Failed to marshall the element %s", element.getValue()), e);
     }
   }
 }

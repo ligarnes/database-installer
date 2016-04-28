@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import net.alteiar.db.installer.exception.ParsingException;
+import net.alteiar.db.installer.xml.exception.ParsingException;
 import net.alteiar.sql.SqlModuleType;
 
 public class SqlModuleWrapperTest {
@@ -16,7 +16,7 @@ public class SqlModuleWrapperTest {
   @Test(expected = ParsingException.class)
   public void testInvalid() throws Exception {
 
-    InputStream invalidModule = getClass().getResourceAsStream("/xml/invalid/module_invalid.xml");
+    InputStream invalidModule = getClass().getResourceAsStream("/xml/invalid/module_invalid_xml.xml");
     new SqlModuleXml(invalidModule);
   }
 

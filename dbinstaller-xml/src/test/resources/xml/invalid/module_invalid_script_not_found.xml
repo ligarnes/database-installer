@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SqlModule xmlns="http://www.alteiar.net/sql">
 	<name>test</name>
+	<location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="JarLocationType">
+		<classpath>xml.script.not.found</classpath>
+	</location>
 	<script>create db</script>
 	<script>create db1</script>
 	<script>create db2</script>
 	<script>create db3</script>
-	<script>create db4
+	<script>create db4</script>
 </SqlModule>
